@@ -9,8 +9,14 @@
 /coverage
 
 # production
-/build
-
+/src
+/public
+/cors.json
+/database.rules.json
+/firebase.json
+/firebase.index.json
+/firebase.rules
+/README.md
 # misc
 .DS_Store
 .env.local
