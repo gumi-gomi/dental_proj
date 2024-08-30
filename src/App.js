@@ -46,8 +46,7 @@ function AppContent() {
 
   return (
     <AppContainer>
-      <GlobalStyle>
-
+      <GlobalStyle/>
       <Header />
       <Content>
         <Routes>
@@ -58,13 +57,12 @@ function AppContent() {
           <Route
             path="/mypage"
             element={currentUser ? <Mypage/> : <Navigate to="/login" replace />}
-            />
+          />
           <Route path="/normal" element={<Normal/>}/>
           <Route path="/introduce" element={<IntroPg/>}/>
         </Routes>
       </Content>
       <Footer />
-            </GlobalStyle>
     </AppContainer>
   );
 }
