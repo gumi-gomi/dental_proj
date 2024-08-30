@@ -5,7 +5,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import Bodypart from './components/Bodypart';
 import Login from './components/Login';
 import Footer from './components/Footer';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Implant from './components/Implant';
 import Gj from './components/Gj';
 import Normal from './components/Normal';
@@ -13,6 +13,23 @@ import Mypage from './components/Mypage';
 import { AuthProvider, useAuth } from './AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import IntroPg from './components/IntroPg';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  html, body, #root {
+    height: 100%;
+  }
+`;
 
 const AppContainer = styled.div`
   display: flex;
@@ -29,6 +46,8 @@ function AppContent() {
 
   return (
     <AppContainer>
+      <GlobalStyle>
+
       <Header />
       <Content>
         <Routes>
@@ -39,12 +58,13 @@ function AppContent() {
           <Route
             path="/mypage"
             element={currentUser ? <Mypage/> : <Navigate to="/login" replace />}
-          />
+            />
           <Route path="/normal" element={<Normal/>}/>
           <Route path="/introduce" element={<IntroPg/>}/>
         </Routes>
       </Content>
       <Footer />
+            </GlobalStyle>
     </AppContainer>
   );
 }
