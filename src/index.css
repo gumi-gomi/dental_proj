@@ -4,6 +4,10 @@
     font-weight: 400;
     font-style: normal;
 }
+html, body {
+    margin: 0px;
+    overflow-x: hidden;
+  }
 body {
     font-family: 'Pretendard-Regular';
     overflow-x: hidden;
